@@ -43,6 +43,20 @@ spec:
                 secretKeyRef:
                   name: todo-secret
                   key: RAZORPAY_KEY_SECRET
+            - name: GOOGLE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: todo-secret
+                  key: GOOGLE_CLIENT_ID
+            - name: GOOGLE_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: todo-secret
+                  key: GOOGLE_CLIENT_SECRET
+            - name: GOOGLE_CALLBACK_URL
+              value: "http://127.0.0.1:46413/auth/google/callback"
+            - name: FRONTEND_URL
+              value: "http://127.0.0.1:28747"
           readinessProbe:
             httpGet:
               path: /
